@@ -25,12 +25,6 @@ jobs:
         with:
           hugo-version: '0.150.0'
           extended: true
-      - name: Setup Dart Sass
-        run: |
-          curl -sL -o /tmp/dartsass.tgz https://github.com/sass/dart-sass/releases/download/1.86.3/dart-sass-1.86.3-linux-x64.tar.gz
-          tar -xzf /tmp/dartsass.tgz -C "$HOME"
-          sudo ln -sf "$HOME/dart-sass/sass" /usr/local/bin/dartsass
-          dartsass --version
       - name: Build site
         run: hugo --minify
       - name: Upload artifact
